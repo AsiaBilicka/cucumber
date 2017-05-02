@@ -25,7 +25,7 @@ Feature: Login
   Scenario: User should be informed if he has used wrong email format
     Given I am on login site
     When I click on "Sign In"
-    And I enter data
+    And I enter data 
       | Fields   | Value            |
       | email    | wrong-mail@to.me |
       | password | password         |
