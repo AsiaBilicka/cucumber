@@ -1,5 +1,6 @@
 package com.bdd.PageObejct;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class CollectionsPage extends AbstractPage{
@@ -7,8 +8,8 @@ public class CollectionsPage extends AbstractPage{
 		super(driver);
 	}
 	
-	public String getUrl(){
-		return driver.getCurrentUrl();
+	public String signedInConfirmation(){
+		return driver.findElement(By.className("message-text")).getText();
 	}
 	
 	

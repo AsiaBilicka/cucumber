@@ -12,4 +12,9 @@ public class LandingPage extends AbstractPage{
 		driver.findElement(By.linkText(linkText)).click();
 		return new SignInPage(driver);
 	}
+
+	public SignInPage navigateToAccount(String url) {
+		driver.navigate().to("http://courses.ultimateqa.com/account");
+		return new SignInPage(driver);
+	}
 }
