@@ -1,7 +1,5 @@
 package com.bdd.cucumber_project;
 
-import org.openqa.selenium.WebDriver;
-
 import com.bdd.PageObejct.LandingPage;
 import com.bdd.PageObejct.SignInPage;
 
@@ -9,11 +7,10 @@ import cucumber.api.java.en.Then;
 import junit.framework.Assert;
 
 
-public class AccountStepDefinitions extends AbstractStepDefinitions{
+public class AccountStepDefinitions {
 	
-	WebDriver driver = getDriver();
-	LandingPage landingPage = getLandingPage();
-	SignInPage signInPage = getSignInPage();
+	LandingPage landingPage = LandingPageProvider.getInstance();
+	SignInPage signInPage = SignInPageProvider.getInstance();
 	
 	@Then("^I should be informed I need to log in$")
 	public void i_should_be_informed_I_need_to_log_in() {

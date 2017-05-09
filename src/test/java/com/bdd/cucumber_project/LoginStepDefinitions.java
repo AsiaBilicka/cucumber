@@ -1,7 +1,5 @@
 package com.bdd.cucumber_project;
 
-import org.openqa.selenium.WebDriver;
-
 import com.bdd.PageObejct.CollectionsPage;
 import com.bdd.PageObejct.LandingPage;
 import com.bdd.PageObejct.SignInPage;
@@ -12,13 +10,12 @@ import cucumber.api.java.en.When;
 import junit.framework.Assert;
 
 
-public class LoginStepDefinitions  extends AbstractStepDefinitions{
+public class LoginStepDefinitions {
 	
-	WebDriver driver = getDriver();
-	LandingPage landingPage = getLandingPage();
-	SignInPage signInPage = getSignInPage();
-	CollectionsPage collectionsPage = getCollectionsPage();
-	
+	LandingPage landingPage = LandingPageProvider.getInstance();
+	SignInPage signInPage = SignInPageProvider.getInstance();
+	CollectionsPage collectionsPage = CollectionsPageProvider.getInstance();
+
 	@And("^I click the login button")
 	public void i_click_the_login_button(){
 		collectionsPage = signInPage.submitForm();

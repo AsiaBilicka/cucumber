@@ -17,4 +17,6 @@ public class LandingPage extends AbstractPage{
 		driver.navigate().to("http://courses.ultimateqa.com/account");
 		return new SignInPage(driver);
 	}
+
+
 }

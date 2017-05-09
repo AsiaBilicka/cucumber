@@ -1,7 +1,5 @@
 package com.bdd.cucumber_project;
 
-import org.openqa.selenium.WebDriver;
-
 import com.bdd.PageObejct.CollectionsPage;
 import com.bdd.PageObejct.LandingPage;
 import com.bdd.PageObejct.SignInPage;
@@ -10,14 +8,12 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.When;
 
-public class CommonStepDefinitions  extends AbstractStepDefinitions{
+public class CommonStepDefinitions {
 	
-	WebDriver driver = getDriver();
-	LandingPage landingPage = getLandingPage();
+	LandingPage landingPage = LandingPageProvider.getInstance();
 	SignInPage signInPage;
-	CollectionsPage collectionsPage = getCollectionsPage();
-	
-	
+	CollectionsPage collectionsPage = CollectionsPageProvider.getInstance();
+
 	@Given("^I am on landing page$")
 	public void i_am_on_landing_page() { 
 		landingPage.navigateToWebApp();
@@ -34,8 +30,8 @@ public class CommonStepDefinitions  extends AbstractStepDefinitions{
 	}
 	
 	@And("^I close the browser$")
-	public void i_close_the_browser(){
-		collectionsPage.closeDriver();
+	public void i_close_the_browser() {
+		DriverProvider.removeInstance();
 	}
 	
 }
