@@ -31,7 +31,14 @@ public class CommonStepDefinitions {
 	
 	@And("^I close the browser$")
 	public void i_close_the_browser() {
+		cleanUp();
+	}
+
+	private void cleanUp() {
 		DriverProvider.removeInstance();
+		CollectionsPageProvider.removeInstance();
+		SignInPageProvider.removeInstance();
+		LandingPageProvider.removeInstance();
 	}
 	
 }
