@@ -20,11 +20,11 @@ public class SignInPage extends AbstractPage{
 	}
 	
 	public String getWarning(){
-		return driver.findElement(By.className("notifications-error__list-item")).getText();
+		return driver.findElement(By.className("message-text")).getText();
 	}
 	
-	public CollectionsPage submitForm() {
+	public AccountHeaderPage submitForm() {
 		driver.findElement(By.id("btn-signin")).click();
-		return new CollectionsPage(driver);
+		return new AccountHeaderPage(driver);
 	}
 }

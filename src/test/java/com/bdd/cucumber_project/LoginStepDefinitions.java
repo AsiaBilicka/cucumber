@@ -1,6 +1,6 @@
 package com.bdd.cucumber_project;
 
-import com.bdd.PageObejct.CollectionsPage;
+import com.bdd.PageObejct.AccountHeaderPage;
 import com.bdd.PageObejct.LandingPage;
 import com.bdd.PageObejct.SignInPage;
 
@@ -14,16 +14,16 @@ public class LoginStepDefinitions {
 	
 	LandingPage landingPage = LandingPageProvider.getInstance();
 	SignInPage signInPage = SignInPageProvider.getInstance();
-	CollectionsPage collectionsPage = CollectionsPageProvider.getInstance();
+	AccountHeaderPage accountHeaderPage = AccountHeaderPageProvider.getInstance();
 
 	@And("^I click the login button")
 	public void i_click_the_login_button(){
-		collectionsPage = signInPage.submitForm();
+		accountHeaderPage = signInPage.submitForm();
 	}
 	
-	@Then("^I should get warning$")
-	public void i_should_get_warning() {
-		Assert.assertTrue(signInPage.getWarning().equals("Invalid email or password."));
+	@Then("^I should get information \"([^\"]*)\"$")
+	public void i_should_get_inforation(String information) throws InterruptedException {
+		Assert.assertTrue(signInPage.getWarning().equals(information));
 	}
 	
 	@When("^I enter email \"([^\"]*)\" and password \"([^\"]*)\"$")

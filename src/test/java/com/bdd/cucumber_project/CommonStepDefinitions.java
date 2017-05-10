@@ -1,6 +1,6 @@
 package com.bdd.cucumber_project;
 
-import com.bdd.PageObejct.CollectionsPage;
+import com.bdd.PageObejct.AccountHeaderPage;
 import com.bdd.PageObejct.LandingPage;
 import com.bdd.PageObejct.SignInPage;
 
@@ -12,7 +12,7 @@ public class CommonStepDefinitions {
 	
 	LandingPage landingPage = LandingPageProvider.getInstance();
 	SignInPage signInPage;
-	CollectionsPage collectionsPage = CollectionsPageProvider.getInstance();
+	AccountHeaderPage accountHeaderPage = AccountHeaderPageProvider.getInstance();
 
 	@Given("^I am on landing page$")
 	public void i_am_on_landing_page() { 
@@ -36,7 +36,7 @@ public class CommonStepDefinitions {
 
 	private void cleanUp() {
 		DriverProvider.removeInstance();
-		CollectionsPageProvider.removeInstance();
+		AccountHeaderPageProvider.removeInstance();
 		SignInPageProvider.removeInstance();
 		LandingPageProvider.removeInstance();
 	}
