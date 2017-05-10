@@ -1,9 +1,9 @@
 Feature: Login page should allow to log in user with proper credentials
-  		And log out user who is logged in
-  		And should not allow to log in user without proper credentials
+  		and log out user who is logged in
+  		and should not allow to log in user without proper credentials
 
   Scenario: User should be able to login with proper credentials
-    Given I am on landing page
+    Given I am on "http://courses.ultimateqa.com" page
     When I click on "Sign In"
     And I enter email "email@to.me" and password "password"
     And I click the login button
@@ -11,7 +11,7 @@ Feature: Login page should allow to log in user with proper credentials
     And I close the browser
 
   Scenario: User who was logged in should be able to log out
-    Given I am on landing page
+    Given I am on "http://courses.ultimateqa.com" page
     When I click on "Sign In"
     And I enter email "email@to.me" and password "password"
     And I click the login button
@@ -21,7 +21,7 @@ Feature: Login page should allow to log in user with proper credentials
     And I close the browser
 
   Scenario Outline: User should not be able to login without proper credentials
-    Given I am on landing page
+    Given I am on "http://courses.ultimateqa.com" page
     When I click on "Sign In"
     And I enter email "<Email>" and password "<Password>"
     And I click the login button

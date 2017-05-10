@@ -1,14 +1,20 @@
 package com.bdd.cucumber_project;
 
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 import com.bdd.PageObejct.AccountHeaderPage;
 
 public class AccountHeaderPageProvider {
+
+	private final static int MAX_TIMEOUT_IN_SECONDS = 60;
 
 	private static AccountHeaderPage accountHeaderPage;
 
 	public static AccountHeaderPage getInstance() {
 		if (accountHeaderPage == null) {
-			accountHeaderPage = new AccountHeaderPage(DriverProvider.getInstance());
+			WebDriver driver = DriverProvider.getInstance();
+			accountHeaderPage = new AccountHeaderPage(driver, new WebDriverWait(driver, MAX_TIMEOUT_IN_SECONDS));
 		}
 		return accountHeaderPage;
 	}

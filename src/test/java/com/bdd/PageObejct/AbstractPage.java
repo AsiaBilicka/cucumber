@@ -1,20 +1,25 @@
 package com.bdd.PageObejct;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class AbstractPage {
 	protected WebDriver driver;
+	protected WebDriverWait wait;
 	
-	public AbstractPage(WebDriver driver){
+	public AbstractPage(WebDriver driver, WebDriverWait wait) {
 		this.driver = driver;
+		this.wait = wait;
 	}
 	
-	public LandingPage navigateToWebApp(){
-		driver.navigate().to("http://courses.ultimateqa.com");
-		return new LandingPage(driver);
+	public LandingPage navigateToWebApp(String url) {
+		driver.navigate().to(url);
+		return new LandingPage(driver, wait);
 	}
-	
-	public void closeDriver(){
-		driver.quit();
+
+	public void waitForElementNotPresent(By by){
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(by));
 	}
 }
