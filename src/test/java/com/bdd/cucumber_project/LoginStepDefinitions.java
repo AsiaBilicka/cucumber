@@ -10,13 +10,15 @@ public class LoginStepDefinitions {
 	
 	SignInPage signInPage = SignInPageProvider.getInstance();
 
-	@And("^I click the login button")
-	public void i_click_the_login_button(){
+	@And("^I login")
+	public void login(){
 		signInPage.submitForm();
 	}
 	
 	@When("^I enter email \"([^\"]*)\" and password \"([^\"]*)\"$")
 	public void i_enter_email_and_password(String email, String password){
-		signInPage.setEmail(email).setPassword(password);
+		signInPage.setEmail(email);
+		signInPage.setPassword(password);
 	}
+	
 }

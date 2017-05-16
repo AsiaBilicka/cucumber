@@ -22,4 +22,8 @@ public class AbstractPage {
 	public void waitForElementNotPresent(By by){
 		wait.until(ExpectedConditions.invisibilityOfElementLocated(by));
 	}
+	
+	public void clickByText(String linkText){
+		driver.findElement(By.linkText(linkText)).click();
+	}
 }

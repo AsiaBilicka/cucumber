@@ -28,5 +28,7 @@ public class AccountHeaderPage extends AbstractPage{
 	public String getWarning() {
 		return driver.findElement(By.className("message-text")).getText();
 	}
+	
+
 
 }

@@ -15,9 +15,9 @@ public class CommonStepDefinitions {
 		landingPage.navigateToWebApp(url);
 	}
 
-	@When("^^I click on \"([^\"]*)\"$")
+	@When("^^I click on \"([^\"]*)\" text$")
 	public void i_click_on(String linkText){
-		landingPage.navigateToSignInPage(linkText);
+		landingPage.clickByText(linkText);
 	}
 	
 	@And("^I close the browser$")

@@ -1,7 +1,7 @@
 package com.bdd.cucumber_project;
 
 import com.bdd.PageObejct.AccountHeaderPage;
-import com.bdd.PageObejct.SignInPage;
+import com.bdd.PageObejct.ProfilePage;
 
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
@@ -10,8 +10,8 @@ import junit.framework.Assert;
 
 public class AccountStepDefinitions {
 	
-	SignInPage signInPage = SignInPageProvider.getInstance();
 	AccountHeaderPage accountHeaderPage = AccountHeaderPageProvider.getInstance();
+	ProfilePage profilePage = ProfilePageProvider.getInstance();
 	
 	@Then("^I should get information \"([^\"]*)\"$")
 	public void i_should_get_inforation(String information) throws InterruptedException {
@@ -23,8 +23,21 @@ public class AccountStepDefinitions {
 		accountHeaderPage.clickAvatar();
 	}
 
-	@And("^I click the logout button$")
-	public void i_click_the_logout_button(){
-		accountHeaderPage.logOut();
+	@And("^I upload the image$")
+	public void i_upload_the_image() throws InterruptedException {
+		profilePage.uploadImage();
+		Thread.sleep(3000);
 	}
+
+	@Then("^I should see the image as avatar$")
+	public void i_should_see_the_image_as_avatar() {
+		Assert.assertTrue(profilePage.checkAvatar().contains("data:image/jpeg"));
+	}
+	
+	@And("^I save my account$")
+	public void i_save_my_account() {
+		profilePage.saveProfile();
+	}
+
+	
 }
