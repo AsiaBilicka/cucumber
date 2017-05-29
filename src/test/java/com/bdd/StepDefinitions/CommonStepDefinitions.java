@@ -1,6 +1,11 @@
-package com.bdd.cucumber_project;
+package com.bdd.StepDefinitions;
 
-import com.bdd.PageObejct.LandingPage;
+import com.bdd.PageObejcts.LandingPage;
+import com.bdd.Providers.AccountHeaderPageProvider;
+import com.bdd.Providers.DriverProvider;
+import com.bdd.Providers.LandingPageProvider;
+import com.bdd.Providers.ProfilePageProvider;
+import com.bdd.Providers.SignInPageProvider;
 
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
@@ -30,6 +35,7 @@ public class CommonStepDefinitions {
 		AccountHeaderPageProvider.removeInstance();
 		SignInPageProvider.removeInstance();
 		LandingPageProvider.removeInstance();
+		ProfilePageProvider.removeInstance();
 	}
 	
 }

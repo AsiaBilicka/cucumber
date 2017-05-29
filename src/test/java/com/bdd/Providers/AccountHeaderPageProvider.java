@@ -1,9 +1,9 @@
-package com.bdd.cucumber_project;
+package com.bdd.Providers;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import com.bdd.PageObejct.AccountHeaderPage;
+import com.bdd.PageObejcts.AccountHeaderPage;
 
 public class AccountHeaderPageProvider {
 

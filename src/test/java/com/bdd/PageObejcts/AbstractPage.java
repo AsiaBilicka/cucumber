@@ -1,4 +1,4 @@
-package com.bdd.PageObejct;
+package com.bdd.PageObejcts;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

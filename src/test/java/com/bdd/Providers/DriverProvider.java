@@ -1,4 +1,4 @@
-package com.bdd.cucumber_project;
+package com.bdd.Providers;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;

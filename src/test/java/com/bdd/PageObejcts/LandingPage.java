@@ -1,4 +1,4 @@
-package com.bdd.PageObejct;
+package com.bdd.PageObejcts;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;

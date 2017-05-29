@@ -1,8 +1,13 @@
-package com.bdd.cucumber_project;
+package com.bdd.StepDefinitions;
 
-import com.bdd.PageObejct.AccountHeaderPage;
-import com.bdd.PageObejct.ProfilePage;
+import java.util.List;
 
+import com.bdd.PageObejcts.AccountHeaderPage;
+import com.bdd.PageObejcts.ProfilePage;
+import com.bdd.Providers.AccountHeaderPageProvider;
+import com.bdd.Providers.ProfilePageProvider;
+
+import cucumber.api.DataTable;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import junit.framework.Assert;
@@ -38,6 +43,17 @@ public class AccountStepDefinitions {
 	public void i_save_my_account() {
 		profilePage.saveProfile();
 	}
+	
+	@Then("^My profile avatar should be changed$")
+	public void my_profile_avatar_should_be_changed() {
+		Assert.assertTrue(profilePage.checkAvatar().contains("amazon"));
+	}
 
+	@And("^I update profile with valid data$")
+	public void I_update_profile_with_valid_data(DataTable table){	
+		List<List<String>> data = table.raw();
+		profilePage.updateData(data);
+	}
+	
 	
 }

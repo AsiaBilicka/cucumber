@@ -1,6 +1,7 @@
-package com.bdd.cucumber_project;
+package com.bdd.StepDefinitions;
 
-import com.bdd.PageObejct.SignInPage;
+import com.bdd.PageObejcts.SignInPage;
+import com.bdd.Providers.SignInPageProvider;
 
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.When;
